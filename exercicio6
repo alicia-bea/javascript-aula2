@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <title>Tabuada</title>
+</head>
+<body>
+
+    <h1>Tabuada</h1>
+   
+    <form method="post" action="">
+        Escolha um número: <input type="number" name="numero"><br>
+        <input type="submit" value="Mostrar Tabuada">
+    </form>
+   
+        <%
+        String numeroStr = request.getParameter("numero");
+        if (numeroStr != null && !numeroStr.isEmpty()) {
+        int numero = Integer.parseInt(numeroStr);
+        %>
+    
+    <h2>Tabuada do <%= numero %>:</h2>
+      <table border="1">
+      
+       <tr>
+          <th>Operando</th>
+          <th>Resultado</th>
+       </tr>
+       
+        <%
+        for (int i = 1; i <= 10; i++) {
+        int resultado = numero * i;
+        %>
+        
+      <tr>
+         <td><%=numero %> x <%=i %></td>
+         <td><%=resultado %></td>
+     </tr>
+     
+     <%
+     }
+     %>
+     
+       </table>
+            
+    <%
+     }
+    %>
+    
+</body>
+</html>
