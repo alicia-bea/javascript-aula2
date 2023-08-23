@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data de Hoje</title>
+</head>
+<body>
+
+    <h1>Data de Hoje</h1>
+    
+    <%
+    java.util.Calendar calendar = java.util.Calendar.getInstance();
+    int year = calendar.get(java.util.Calendar.YEAR);
+    int month = calendar.get(java.util.Calendar.MONTH) + 1; 
+    int day = calendar.get(java.util.Calendar.DAY_OF_MONTH);
+    %>
+    
+    <p>A data de hoje é: <%=day %>/<%=month %>/<%=year %></p>
+</body>
+</html>
